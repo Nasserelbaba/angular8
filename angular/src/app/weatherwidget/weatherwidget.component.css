@@ -1,0 +1,72 @@
+.mainContainer{
+    position: relative;
+    width: 600px;
+    height: 330px;
+    background-color: white;
+}
+.topContainer{
+    background-color: #01b0f1;
+    height: 60%;
+    color: white;
+
+}
+#location{
+    position:absolute;
+    top: 10px;
+    right:20px;
+}
+#timeHour{
+    position: absolute;
+    right:30px;
+    top:35px;
+}
+.dayIcon{
+    display: block;
+    margin: 0 auto;
+    width :20%;
+    filter: brightness(100);
+}
+.weatherDescription{
+    position: absolute;
+    left: 30px;
+    top: 160px;
+}
+.bottomContainer{
+    width: 600px;
+}
+.temp{
+    top: 10px;
+    font-size: 40px;
+    text-align: center;
+    left: 10px;
+}
+.dayname{
+    font-size: 16px;
+}
+.humidity{
+    font-size: 12px;
+    text-align: center;
+    right: 35px;
+}
+.smallIcon{
+
+    display: block;
+    margin-left:0px;
+    width :50%;
+    margin-top: 10px;
+    filter: invert(50%);
+    
+}
+.daysIcons{
+    width :110%;
+    margin-top: 10px;
+    filter: invert(50%);
+}
+.col-1{
+    
+    right: 20px;
+    top: 10px;
+}
+.daysTemp{
+    top: 5px;
+}

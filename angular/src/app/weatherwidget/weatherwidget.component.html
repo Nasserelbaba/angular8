@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div class="mainContainer">
+    <div class="topContainer">
+        <div><span>Weather Widget</span><span id="location">{{apidata.locations[0].info.english_name}}</span>
+            <span id="timeHour" (onload)="time()"></span></div>
+        <div class="mainIconContaner"><img class="dayIcon"
+                src="https://weather-statuses.devops.arabiaweather.com/mobile-site/color-icons/{{apidata.locations[0].daily[0].day_time.status_id}}.svg">
+        </div>
+        <div class="weatherDescription">{{apidata.locations[0].daily[0].day_time.english_description}}</div>
+
+    </div>
+
+
+
+    <div class="bottomContainer">
+
+        <div class="gridContainer">
+            <div class="row">
+                <div class="col col-3 temp" style="height: 120%">
+                    {{apidata.locations[0].daily[0].day_time.temperature.max | number:'1.0-0'}}&deg;
+                    <div class="row today">
+                        <div class="col dayname">
+                            {{apidata.locations[0].daily[0].day | date:'EEEE'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-3">
+                    <img class="smallIcon"
+                        src="https://weather-statuses.devops.arabiaweather.com/mobile-site/color-icons/{{apidata.locations[0].daily[0].day_time.status_id}}.svg">
+
+                    <div class="row">
+                        <div class="col humidity">
+                            {{apidata.locations[0].daily[0].day_time.wind_speed.max | number:'1.0-0'}}mph /
+                            {{apidata.locations[0].daily[0].day_time.relative_humidity.max | number:'1.0-0'}}&deg;
+                        </div>
+                    </div>
+                </div>
+                <div *ngFor="let day of apidata.locations[0].daily" class="col col-1 border-left">
+                    {{ day.day |date:'EEEEEE' }}
+                    <div class="row">
+                        <div class="col">
+                            <img class="daysIcons"
+                                src="https://weather-statuses.devops.arabiaweather.com/mobile-site/color-icons/{{day.day_time.status_id}}.svg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col daysTemp">
+                            {{day.day_time.temperature.max | number:'1.0-0'}}&deg;
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
