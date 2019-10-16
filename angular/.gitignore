@@ -44,5 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-# ignore folder named 'services'
-services/
+
+# Ignore folder named `services`
+/services/
